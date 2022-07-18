@@ -1,0 +1,520 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/simple-api.local"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "aff0bc04-6ef7-4c74-b98c-f520fe775bd6",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Admin endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get logined admin",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/profile"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"data\": {\n      \"email\": \"example@gmail.com\",\n      \"name\": \"example\",\n      \"surname\": \"example\"\n   }\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n   \"message\": \"Unauthenticated.\"\n}",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "JsonResponse",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/categories",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/categories"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"data\": {\n      \"email\": \"example@gmail.com\",\n      \"name\": \"example\",\n      \"surname\": \"example\"\n   }\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n   \"message\": \"Unauthenticated.\"\n}",
+                            "name": "Unauthorized"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Auth Admin endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Login admin",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/auth\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"example@example.com\",\"password\":\"password\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"data\": {\n     \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjUwOWZlODQ3MzU1YTJkODM0YjU2NjQ2ZjIxMjAxZDBiZGQxMDc2Zjc0Y2Y1NTBiZGYyZjNmNTAxZDYyY2Q4NzI2YzcwMTQwMDVkZWU5ZWEiLCJpYXQiOjE2NTU5MjgzMzkuMzQwNDc0LCJuYmYiOjE2NTU5MjgzMzkuMzQwNDgsImV4cCI6MTY4NzQ2NDMzOS4zMDQzMjgsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.kYOqYLIeiV61_FFGL7GMyUCl-7cwB6_AJvfNc8srN6GGzpIVDoEGMnWQINXPYIIBwQ0udpZI4Jb_1Rmal5u9x_IHJcswKTmDNX1BnXRp3MaEFoUouIc1g6qvMDSrm4WblgF6WDzE3OufdtxPIzrziKyvomnl3BSTjvpgqy-mIK-0wN3QUwXCB4GGjLTLc6rHyr52__mfM0qyCOAzx4ILv9iSXKH1KNK1hNIDf302KXE3JETJZ2CDifBJFiHGKxHbhPOXoQi-1bVmEKZD2l3wWlR68r2WLsohadW4rivAnQPKGWrTk9bjBkAh1Pz5P4D77RE4UpUgunomNoCWk0lkDbtyVxsgJaT_HC394yqggIYszFT0oy-0lmQPv6gpPfLsexn9Q2aabx2JZMarGCSthzXRSxcOcmNQZj1wRqcqK4IfW6VpUgMO1xteTx2Dpzw-k9PIAosUPwMeU7KlLTOKh9_XgTje7EsuUcmPS01kp6oLvfs06pLkwtlNAG2q37eycP3wLNY9M2H913XyVgNyT02bYczXbQHo6HK4HDmENDfhBIiwQ-O8f2Kg9tLF8aN-4a4RyZLyzFef0HeVYdEr08yuuDw654O8aGfpropy1wAvbk7LMOl75lNw7jdIESJLMn9o7kic-Pw2q9TipLP0Q-7R3DghEfU2FORdGVWgAPQ\",\n     \"user\": {\n         \"email\": \"example@gmail.com\",\n         \"name\": \"example\",\n         \"surname\": \"emample\"\n     }\n   }\n}",
+                            "name": "success"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n   \"errors\": {\n     \"login\" : [\"The email or password not correct.\"]\n    }\n}",
+                            "name": "Unprocessable Entity"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Auth endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Login user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/auth\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"login\":\"dasadsa\",\"password\":\"hash132\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"data\": {\n     \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjUwOWZlODQ3MzU1YTJkODM0YjU2NjQ2ZjIxMjAxZDBiZGQxMDc2Zjc0Y2Y1NTBiZGYyZjNmNTAxZDYyY2Q4NzI2YzcwMTQwMDVkZWU5ZWEiLCJpYXQiOjE2NTU5MjgzMzkuMzQwNDc0LCJuYmYiOjE2NTU5MjgzMzkuMzQwNDgsImV4cCI6MTY4NzQ2NDMzOS4zMDQzMjgsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.kYOqYLIeiV61_FFGL7GMyUCl-7cwB6_AJvfNc8srN6GGzpIVDoEGMnWQINXPYIIBwQ0udpZI4Jb_1Rmal5u9x_IHJcswKTmDNX1BnXRp3MaEFoUouIc1g6qvMDSrm4WblgF6WDzE3OufdtxPIzrziKyvomnl3BSTjvpgqy-mIK-0wN3QUwXCB4GGjLTLc6rHyr52__mfM0qyCOAzx4ILv9iSXKH1KNK1hNIDf302KXE3JETJZ2CDifBJFiHGKxHbhPOXoQi-1bVmEKZD2l3wWlR68r2WLsohadW4rivAnQPKGWrTk9bjBkAh1Pz5P4D77RE4UpUgunomNoCWk0lkDbtyVxsgJaT_HC394yqggIYszFT0oy-0lmQPv6gpPfLsexn9Q2aabx2JZMarGCSthzXRSxcOcmNQZj1wRqcqK4IfW6VpUgMO1xteTx2Dpzw-k9PIAosUPwMeU7KlLTOKh9_XgTje7EsuUcmPS01kp6oLvfs06pLkwtlNAG2q37eycP3wLNY9M2H913XyVgNyT02bYczXbQHo6HK4HDmENDfhBIiwQ-O8f2Kg9tLF8aN-4a4RyZLyzFef0HeVYdEr08yuuDw654O8aGfpropy1wAvbk7LMOl75lNw7jdIESJLMn9o7kic-Pw2q9TipLP0Q-7R3DghEfU2FORdGVWgAPQ\",\n     \"user\": {\n         \"email\": \"example@gmail.com\",\n         \"nickname\": \"example\"\n     }\n   }\n}",
+                            "name": "success"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n   \"errors\": {\n     \"login\" : [\"The login or password is incorect.\"]\n    }\n}",
+                            "name": "Unprocessable Entity"
+                        }
+                    ]
+                },
+                {
+                    "name": "User register proccess",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/auth\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/auth\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"nickname\":\"placeat\",\"email\":\"asd@aaa.aaa\",\"password\":\"20122aaw\",\"password_confirmation\":\"20122aaw\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"data\": {\n     \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjUwOWZlODQ3MzU1YTJkODM0YjU2NjQ2ZjIxMjAxZDBiZGQxMDc2Zjc0Y2Y1NTBiZGYyZjNmNTAxZDYyY2Q4NzI2YzcwMTQwMDVkZWU5ZWEiLCJpYXQiOjE2NTU5MjgzMzkuMzQwNDc0LCJuYmYiOjE2NTU5MjgzMzkuMzQwNDgsImV4cCI6MTY4NzQ2NDMzOS4zMDQzMjgsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.kYOqYLIeiV61_FFGL7GMyUCl-7cwB6_AJvfNc8srN6GGzpIVDoEGMnWQINXPYIIBwQ0udpZI4Jb_1Rmal5u9x_IHJcswKTmDNX1BnXRp3MaEFoUouIc1g6qvMDSrm4WblgF6WDzE3OufdtxPIzrziKyvomnl3BSTjvpgqy-mIK-0wN3QUwXCB4GGjLTLc6rHyr52__mfM0qyCOAzx4ILv9iSXKH1KNK1hNIDf302KXE3JETJZ2CDifBJFiHGKxHbhPOXoQi-1bVmEKZD2l3wWlR68r2WLsohadW4rivAnQPKGWrTk9bjBkAh1Pz5P4D77RE4UpUgunomNoCWk0lkDbtyVxsgJaT_HC394yqggIYszFT0oy-0lmQPv6gpPfLsexn9Q2aabx2JZMarGCSthzXRSxcOcmNQZj1wRqcqK4IfW6VpUgMO1xteTx2Dpzw-k9PIAosUPwMeU7KlLTOKh9_XgTje7EsuUcmPS01kp6oLvfs06pLkwtlNAG2q37eycP3wLNY9M2H913XyVgNyT02bYczXbQHo6HK4HDmENDfhBIiwQ-O8f2Kg9tLF8aN-4a4RyZLyzFef0HeVYdEr08yuuDw654O8aGfpropy1wAvbk7LMOl75lNw7jdIESJLMn9o7kic-Pw2q9TipLP0Q-7R3DghEfU2FORdGVWgAPQ\",\n     \"user\": {\n         \"email\": \"example@gmail.com\",\n         \"nickname\": \"example\"\n     }\n   }\n}",
+                            "name": "success"
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{\n   \"success\": false,\n   \"errors\": {\n     \"email\": [\n          \"The email field is required.\"\n     ],\n     \"nickname\" : [\n          \"The login or password is incorect.\"\n     ],\n     \"password\": [\n          \"The password field is required.\"\n     ]\n    }\n}",
+                            "name": "Unprocessable Entity"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get logined user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/profile"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"data\": {\n      \"email\": \"example@gmail.com\",\n      \"nickname\": \"aut\"\n   }\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n   \"message\": \"Unauthenticated.\"\n}",
+                            "name": "Unauthorized"
+                        },
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "JsonResponse",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/categories",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/categories"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/categories\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/categories\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "20",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/categories\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/categories\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/admin\/categories\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/admin\/categories\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "15",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer"
+    }
+}

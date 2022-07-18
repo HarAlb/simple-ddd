@@ -1,0 +1,84 @@
+name: 'Admin endpoints'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/admin/profile
+    metadata:
+      title: 'Get logined admin'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "data": {
+                "email": "example@gmail.com",
+                "name": "example",
+                "surname": "example"
+             }
+          }
+        headers: []
+        description: '200, Success'
+      -
+        status: 401
+        content: |-
+          {
+             "message": "Unauthenticated."
+          }
+        headers: []
+        description: '401, Unauthorized'
+      -
+        status: 200
+        content: JsonResponse
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/admin/categories
+    metadata:
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "data": {
+                "email": "example@gmail.com",
+                "name": "example",
+                "surname": "example"
+             }
+          }
+        headers: []
+        description: '200, Success'
+      -
+        status: 401
+        content: |-
+          {
+             "message": "Unauthenticated."
+          }
+        headers: []
+        description: '401, Unauthorized'
+    responseFields: []
