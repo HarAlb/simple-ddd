@@ -23,7 +23,7 @@ If the developer knows what is Single Responsibility,we won't get GOD object.
 
 [X]Repository - is a single file who can call model, To abandon models in the future and write clean SQL queries
 
-[X]DTO - however we use for disable using Request in service, and really know what need service from request.
+[X]DTO - we use for disable using Request in service, and really know what need service from request.
 
 [X]Controller - we use as [adapter](https://refactoring.guru/design-patterns/adapter)
 The class will create DTO-s that needs service, also catch exceptions from service, and modify as a response.
